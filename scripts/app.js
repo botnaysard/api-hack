@@ -14,8 +14,8 @@ $(document).ready(function(){
   		
   		$.getJSON(homeUrl, function(home){ // function(response) -- naming the object that is returned from the API
     		console.log(home);
-    		var homeLat = home.results[0].geometry.location.lat;
-    		var homeLong = home.results[0].geometry.location.lng;
+    		homeLat = home.results[0].geometry.location.lat;
+    		homeLong = home.results[0].geometry.location.lng;
     		console.log(homeLat, homeLong);
     	});
 
@@ -25,11 +25,31 @@ $(document).ready(function(){
   		
   		$.getJSON(currentUrl, function(current){ // function(response) -- naming the object that is returned from the API
     		console.log(current);
-    		var currentLat = current.results[0].geometry.location.lat;
-    		var currentLong = current.results[0].geometry.location.lng;
+    		currentLat = current.results[0].geometry.location.lat;
+    		currentLong = current.results[0].geometry.location.lng;
     		console.log(currentLat, currentLong);    		
     	});
 
 		// Calculate the distance between the two locations using the haversine formula
+
+    function calculateDistance() {
+
+      Number.prototype.toRad = function() {
+        return this * Math.PI / 180;
+      }
+
+      var R = 6371; // km 
+      var x1 = currentLat - homeLat;
+      var dLat = x1.toRad();  
+      var x2 = currentLong - homeLong;
+      var dLon = x2.toRad();  
+      var a = Math.sin(dLat/2) * Math.sin(dLat/2) + 
+                      Math.cos(homeLat.toRad()) * Math.cos(currentLat.toRad()) * 
+                      Math.sin(dLon/2) * Math.sin(dLon/2);  
+      var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+      var d = R * c; 
+      console.log('distance in km:', d);
+    }
+    
 	});
 });
