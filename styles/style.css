@@ -6,9 +6,6 @@ body {
 	width: 600px;
 	margin-left: auto;
 	margin-right: auto;
-}
-
-.main-container {
 	border: 1px solid white;
 	margin-top: 2em;
 	margin-bottom: 1em;
@@ -117,3 +114,51 @@ input[type=submit] {
 	box-shadow: none;
 	border: 1px solid white;
 }
+
+@media only screen and (max-width: 610px) {
+
+body {
+	background-color: #00CC99;
+}
+
+#map-container {
+visibility: hidden;
+display: none;
+}
+
+.main-container {
+	width: 100%;
+	border: none;
+	border-radius: 0px;
+	-webkit-border-radius: 0px;
+	margin-top: 1em;
+}
+
+.main-container h1 {
+	font-size: 1em;
+}
+
+.distance-comment {
+	font-size: 1em;
+	margin: 0.25em;
+}
+
+.box, .location-getter, #distance-feedback {
+	width: 90%;
+}
+
+}
+
+@media only screen and (max-width: 350px) {
+
+#distance-feedback {
+	padding-top: .3em;
+	height: 3em;
+}
+
+}
+
+
+
+
+

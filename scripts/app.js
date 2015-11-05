@@ -11,9 +11,9 @@ $(document).ready(function(){
   var bounds = new google.maps.LatLngBounds();
 
   // Capture the users home and current address
-  
+
 	$('.location-getter').submit(function(event){
-		event.preventDefault();	
+		event.preventDefault();
 		var homeAddress = $(this).find("input[name='home-address']").val().toUpperCase();
 		var currentLocation = $(this).find("input[name='current-location']").val().toUpperCase();
     var geocoder = new google.maps.Geocoder();
@@ -36,7 +36,6 @@ $(document).ready(function(){
           // Get current location (latitude + longitude)
           location2 = results[0].geometry.location;
           distanceBetween = Math.round(google.maps.geometry.spherical.computeDistanceBetween(location1, location2) / 1000);
-          console.log(distanceBetween);
 
           // Prepare the map to display markers for  both user enetered points         
           bounds.extend(location1);
@@ -70,3 +69,8 @@ $(document).ready(function(){
     }
   });
 });
+
+//still need to add a reset to the form
+//homeMarker.setMap(null);
+//currentMarker.setMap(null);
+
