@@ -11,6 +11,7 @@ $(document).ready(function(){
   var bounds = new google.maps.LatLngBounds();
 
   // Capture the users home and current address
+  
 	$('.location-getter').submit(function(event){
 		event.preventDefault();	
 		var homeAddress = $(this).find("input[name='home-address']").val().toUpperCase();
@@ -61,7 +62,7 @@ $(document).ready(function(){
           });
 
           // Tell the user how far they have travelled
-          $('#distance-feedback').html("That's " + distanceBetween + "km away from home!");
+          $('#distance-feedback').html("You're " + distanceBetween + "km away from home!");
         } else {
             alert("Geocode was not successful for the following reason: " + status);
         }
