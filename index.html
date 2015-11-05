@@ -3,10 +3,12 @@
 <head>
 	<meta charset="UTF-8">
 	<title>howfarfromho.me</title>
+	<link rel="stylesheet" href="styles/normalize.css">
 	<link rel="stylesheet" href="styles/style.css">
+	<link href='https://fonts.googleapis.com/css?family=Lato:700,400,300|Merriweather:300,400' rel='stylesheet' type='text/css'>
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/2.4.0/math.min.js"></script> 
-	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&libraries=geometry"></script>
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?libraries=geometry"></script>
 	<script src="scripts/app.js"></script>
 </head>
 <body>
@@ -14,18 +16,18 @@
 		<div class="header-text"><h1>howfarfromho.me</h1></div>
 		<div class="distance-comment">Find out how far you have strayed from your abode.</div>
 		<form class="location-getter" onsubmit="return false;">
-			<div>
-				<input type="text" placeholder='enter your home address' name="home-address" size="50" autofocus required>
+			<div class="form-element"> I live here:
+				<input class="box" type="text" placeholder='enter your home address' name="home-address" size="50" autofocus required>
 			</div>
-			<div>
-				<input type="text" placeholder='i.e. address, intersetion, city' name="current-location" size="50" autofocus required>
+			<div class="form-element">I'm here right now:
+				<input class="box" type="text" placeholder='i.e. address, intersection, city' name="current-location" size="50" autofocus required>
 			</div>
-			<div id="go-button">
+			<div class="form-element" id="go-button">
 				<input type="submit" value="Go!">
 			</div>
-			<div class="map-container"></div>
-			<div class="distance-feedback"><h3>Woah, you are 783 miles from home!</h3></div>
 		</form>
+		<div id="map-container"></div>
+		<div id="distance-feedback"></div>
 	</div>
 </body>
 </html>

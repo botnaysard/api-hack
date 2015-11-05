@@ -4,3 +4,63 @@
 	margin-right: auto;
 	border: 1px solid red;
 }
+
+#map-container {
+	width: 500px;
+	height: 500px;
+	border: 1px solid blue;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+#distance-feedback{
+	width: 100%;
+	text-align: center;
+	font-family: Lato, sans-serif;
+}
+
+.location-getter {
+	width: 360px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.form-element{
+	margin-top: .5em;
+	font-family: Lato, sans-serif;
+	font-size: 1em
+}
+
+#go-button{
+	width: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 1em;
+	font-family: Lato, sans-serif;
+}
+
+.header-text, .distance-comment {
+	text-align: center;
+}
+
+.distance-comment {
+	margin-top: -2em;
+	margin-bottom: 1em;
+	font-family: Merriweather, serif;	
+}
+
+.header-text {
+	margin-top: 1em;
+	font-family: Lato, sans-serif;
+	font-weight: 700;
+	font-size: 1.5em;
+}
+
+.box {
+	font-family: Merriweather, serif;
+	font-weight: 300;
+	font-size: 0.75em;
+}
+
