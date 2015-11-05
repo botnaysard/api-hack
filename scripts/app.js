@@ -1,13 +1,14 @@
 $(document).ready(function(){
 
-  // drop in a default map so the container isn't empty
-  var defaultCanvas = document.getElementById('map-container');
-  var defaultOptions = {
+  // load the map right away to prevent empty content ont screen
+  var mapCanvas = document.getElementById('map-container');
+  var mapOptions = {
     zoom: 1,
     center: {lat: 39, lng: 34},
     mapTypeID: google.maps.MapTypeId.HYBRID
   }
-  var defaultmap = new google.maps.Map(defaultCanvas, defaultOptions);
+  var map = new google.maps.Map(mapCanvas, mapOptions);
+  var bounds = new google.maps.LatLngBounds();
 
   // Capture the users home and current address
 	$('.location-getter').submit(function(event){
@@ -36,26 +37,18 @@ $(document).ready(function(){
           distanceBetween = Math.round(google.maps.geometry.spherical.computeDistanceBetween(location1, location2) / 1000);
           console.log(distanceBetween);
 
-          // Calculate the center of the map
-          mapCenter = new google.maps.LatLng((location1.lat() + location2.lat()) / 2, (location1.lng() + location2.lng()) / 2);
-          console.log('map center:'+ mapCenter);
+          // Prepare the map to display markers for  both user enetered points         
+          bounds.extend(location1);
+          bounds.extend(location2);
+          map.fitBounds(bounds);
+          map.panToBounds(bounds);
           
-          // Set map parameters
-          var mapCanvas = document.getElementById('map-container');
-          var mapOptions = {
-            zoom: 2,
-            center: mapCenter,
-            mapTypeID: google.maps.MapTypeId.HYBRID
-          }
-
-          // Display the map
-          var map = new google.maps.Map(mapCanvas, mapOptions);
-
-          // Add markers
+          // Add markers to the map
           // For home        
           var homeMarker = new google.maps.Marker({
             position: location1,
             map: map,
+            animation: google.maps.Animation.DROP,
             Title: 'Home: ' + homeAddress
           });
 
@@ -63,6 +56,7 @@ $(document).ready(function(){
             var currentMarker = new google.maps.Marker({
               position: location2,
               map: map,
+              animation: google.maps.Animation.DROP,
               Title: 'Current Location: ' + currentLocation
           });
 
