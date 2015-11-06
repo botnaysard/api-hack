@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width" />
 	<link rel="stylesheet" href="styles/normalize.css">
 	<link rel="stylesheet" href="styles/style.css">
+	<link rel="stylesheet" href="styles/font-awesome.min.css">
 	<link href='https://fonts.googleapis.com/css?family=Lato:700,400,300|Merriweather:300,400' rel='stylesheet' type='text/css'>
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/2.4.0/math.min.js"></script> 
@@ -28,7 +29,10 @@
 			</div>
 		</form>
 		<div id="map-container"></div>
-		<div id="distance-feedback">Waiting for input...</div>
+		<div class="distance-reset">
+			<div id="distance-feedback">Waiting for input...</div>
+			<div><i class="fa fa-refresh fa-3x reset"></i></div>
+		</div>
 	</div>
 </body>
 </html>

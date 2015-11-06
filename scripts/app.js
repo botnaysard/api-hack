@@ -30,7 +30,8 @@ $(document).ready(function(){
         }
         return location1;
       });
-      // 
+      
+      // calculate distance between points 
       geocoder.geocode( { 'address': currentLocation}, function(results, status) {
         if (status == google.maps.GeocoderStatus.OK) {
           // Get current location (latitude + longitude)
@@ -44,6 +45,7 @@ $(document).ready(function(){
           map.panToBounds(bounds);
           
           // Add markers to the map
+          
           // For home        
           var homeMarker = new google.maps.Marker({
             position: location1,
@@ -53,14 +55,30 @@ $(document).ready(function(){
           });
 
           // For current location
-            var currentMarker = new google.maps.Marker({
-              position: location2,
-              map: map,
-              animation: google.maps.Animation.DROP,
-              Title: 'Current Location: ' + currentLocation
+          var currentMarker = new google.maps.Marker({
+             position: location2,
+             map: map,
+             animation: google.maps.Animation.DROP,
+             Title: 'Current Location: ' + currentLocation
           });
 
-          // Tell the user how far they have travelled
+          // reset everything when clicked
+
+          $('.reset').click(function(){
+
+            // reset form fields
+            $('.box').val("");
+            
+            // reset feedback box
+            $('#distance-feedback').html("Waiting for input...");  
+
+            // clear dropped markers & reset bounds
+            homeMarker.setMap(null);
+            currentMarker.setMap(null);
+            bounds = new google.maps.LatLngBounds(null);
+            
+          });
+
           $('#distance-feedback').html("You're " + distanceBetween + "km away from home!");
         } else {
             alert("Geocode was not successful for the following reason: " + status);
@@ -69,8 +87,3 @@ $(document).ready(function(){
     }
   });
 });
-
-//still need to add a reset to the form
-//homeMarker.setMap(null);
-//currentMarker.setMap(null);
-

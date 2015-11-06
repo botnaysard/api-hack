@@ -27,7 +27,7 @@ body {
 }
 
 #distance-feedback{
-	width: 550px;
+	width: 450px;
 	margin-right: auto;
 	margin-left: auto;
 	margin-bottom: 1em;
@@ -41,6 +41,26 @@ body {
 	text-align: center;
 	padding-top: 0.75em;
 	background-color: #00B88A;
+	float: left;
+	position: relative;
+}
+
+.reset {
+	color: #0BFFC2;
+	cursor: pointer;
+	width: 42px;
+	float: left;
+	position: relative;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+.distance-reset{
+	width: 508px;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	height: 85px;
 }
 
 .location-getter {
@@ -56,6 +76,9 @@ body {
 	font-family: Merriweather, serif;
 	font-size: 1.5em;
 	color: white;
+	width: 450px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #go-button{
@@ -115,6 +138,8 @@ input[type=submit] {
 	border: 1px solid white;
 }
 
+
+
 @media only screen and (max-width: 610px) {
 
 body {
@@ -143,8 +168,8 @@ display: none;
 	margin: 0.25em;
 }
 
-.box, .location-getter, #distance-feedback {
-	width: 90%;
+.box, .location-getter, #distance-reset, .header-text, .distance-comment {
+	width: 75%;
 }
 
 }
