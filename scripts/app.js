@@ -1,11 +1,14 @@
 $(document).ready(function(){
-
+  
+  // fade the page in quickly
+  $('body').css('display', 'none');
+  $('body').fadeIn(200);
+  
   // load the map right away to prevent empty content ont screen
-
   var mapCanvas = document.getElementById('map-container');
   var mapOptions = {
     zoom: 1,
-    center: {lat: 39, lng: 34},
+    center: {lat: 30, lng: 34},
     mapTypeID: google.maps.MapTypeId.HYBRID
   }
   var map = new google.maps.Map(mapCanvas, mapOptions);
@@ -60,6 +63,19 @@ $(document).ready(function(){
             animation: google.maps.Animation.DROP,
             Title: 'Current Location: ' + currentLocation
           });
+
+          // animate the reset button on hover
+          $('.reset').hover(
+              function() {
+                // do this on hover
+                $(this).css('cursor','pointer');
+                $(this).animate({'color': '#0F2C42'}, 200);
+              }, 
+              function() {
+                // do this on hover out
+                $(this).animate({'color': '#639CA7'}, 200);
+              }
+          );
 
           // reset everything when clicked
           $('.reset').click(function(){
