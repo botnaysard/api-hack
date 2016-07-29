@@ -4,11 +4,6 @@ $(document).ready(function(){
   $('body').css('display', 'none');
   $('body').fadeIn(200);
 
-  // initialize the API
-
-  
-
-  
   // load the map right away to prevent empty content ont screen
   var mapCanvas = document.getElementById('map-container');
   var mapOptions = {
