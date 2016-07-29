@@ -3,11 +3,15 @@ $(document).ready(function(){
   // fade the page in quickly
   $('body').css('display', 'none');
   $('body').fadeIn(200);
+
+  // initialize the API
+
+  
+
   
   // load the map right away to prevent empty content ont screen
   var mapCanvas = document.getElementById('map-container');
   var mapOptions = {
-    key: AIzaSyBNxLkjOmKzb09oXaTP3U8WV0tVxPNwI1U,
     zoom: 1,
     center: {lat: 30, lng: 34},
     mapTypeID: google.maps.MapTypeId.HYBRID
