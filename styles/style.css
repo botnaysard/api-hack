@@ -1,212 +1,96 @@
 body {
-	background-color: #F9F9F9;
+	background-color: #f9f9f9;
 }
 
 .main-container {
-	width: 600px;
-	height: 100%;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 1em;
-	background-color: #F9F9F9;
-}
-
-.header-text, .distance-comment {
+	background-color: rgba(255, 255, 255, 1.0);
+	z-index: 20;
+	width: 100%;
+	position: absolute;
+	top: 0;
 	text-align: center;
-}
-
-.distance-comment {
-	margin-top: -2.2em;
-	margin-bottom: 0.5em;
-	font-family: Merriweather, serif;	
-	color: #639CA7;
-	padding-bottom: 0.5em;
-	font-size: 1.3em;
-}
-
-.header-text {
-	margin-top: 0px;
-	font-family: Lato, sans-serif;
-	font-weight: 700;
-	font-size: 2em;
-	color: white;
-}
-
-.header-text h1{
-	margin-top: 0px;
-	color: #0F2C42;
+	border: none;
 }
 
 .location-getter {
-	width: 400px;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 1.3em;
-	margin-top: 0.5em;
+	width: 40%;
+	display: table;
+	margin: 0.5em auto;
+}
+
+.location-getter div {
+	display: table-cell;
+	vertical-align: middle;
 }
 
 .box {
 	font-family: Lato, sans-serif;
 	font-weight: 300;
 	font-size: 0.75em;
-	border-right: 2px solid #0F2C42;
-	border-top: none;
-	border-left: none;
-	border-bottom: 1px solid #F2F2F2;
-	background-color: #FFF;
+ 	background-color: #fafafa;
+ 	border: 1px solid #171b1e;
 	height: 1.2em;
-	padding: 5px;
+	padding: 0.1em;
 	margin: 0.5em;
-	color: #999;
+	color: #171b1e;
 	width: 370px;
 }
 
 .form-element{
-	margin-top: .5em;
-	font-family: Merriweather, serif;
+	margin: .5em;
 	font-size: 1.5em;
-	color: #999;
-	width: 450px;
-	margin-left: auto;
-	margin-right: auto;
+	vertical-align: middle;
 }
 
 input[type=submit] {
-	background-color: #FFF;
-	color: #999;
-	font-size: 1.5em;
+	font-family: Lato, sans-serif;
+	background-color: #d4d9de;
+	color: #171b1e;
+	font-size: 0.75em;
 	box-shadow: none;
-	border-right: 2px solid #F12C35;
-	border-top: none;
-	border-left: none;
-	border-bottom: 1px solid #F2F2F2;
+	border: 1px solid #171b1e;
+	margin: 0.5em;
+	padding: 0.1em;
+	height: auto;
+	transition: all 0.1s ease-in-out 0.25s; 
+}
+
+
+input[type=submit]:hover {
+	background-color: #434e56;
+	color: #fff;
 }
 
 #map-container {
-	width: 540px;
-	height: 400px;
-	border: 2px solid #D4D4D4;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 0.5em;
-	margin-bottom: 1.5em;
-	border-radius: 20px;
-	-webkit-border-radius: 20px;
-}
-
-#go-button{
-	width: 70px;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 0.5em;
-	font-family: Lato, sans-serif;
-}
-
-.distance-reset{
-	width: 510px;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 1em;
-	position: relative;
-	height: 85px;
+	width: 100vw;
+	height: 100vh;
+	z-index: 10;
+	position: absolute;
 }
 
 .distance-feedback{
-	width: 450px;
-	margin-right: auto;
-	margin-left: auto;
-	font-family: Merriweather, serif;
+	width: 100%;
+	bottom: 0px;
+	position: absolute;
+	z-index: 20;
+	background: rgba(255, 255, 255, 1.0);
+	font-family: Lato, arial, sans-serif;
 	font-size: 1.5em;
 	height: 2em;
-	color: #999;
-	border-right: 2px solid #0F2C42;
-	border-bottom: 1px solid #F2F2F2;
-	border-top: none;
-	border-left: none;
+	color: #171b1e;
 	text-align: center;
 	padding-top: 0.75em;
-	background-color: #FFF;
-	float: left;
-	position: relative;
-}
-
-.reset {
-	color: #639CA7;
-	width: 42px;
-	float: left;
-	position: relative;
-	margin-top: 10px;
-	margin-left: 15px;
-}
-
-/*.reset:hover {
-	color: #0F2C42;
-}
-
-/*** for screens smaller than the page width ***/
-
-@media only screen and (max-width: 610px) {
-
-#map-container {
-visibility: hidden;
-display: none;
-}
-
-.main-container {
-	width: 100%;
 	border: none;
-	border-radius: 0px;
-	-webkit-border-radius: 0px;
-	margin-top: 1em;
-}
-
-.main-container h1 {
-	font-size: 1em;
-}
-
-.distance-comment {
-	font-size: 1em;
-	margin: 0.25em;
-}
-
-.box, .location-getter, .distance-feedback, .header-text, .distance-comment {
-	width: 400px;
-}
-
-.distance-reset {
-	width: 400px;
-	margin-left: auto;
-	margin-right: auto;
 }
 
 .reset {
-visibility: hidden;
-display: none;
+	color: #d4d9de;
+	margin: 0.5em 0.5em 0.5em 0.15em;
+	padding: 0.1em;
 }
 
+@media (max-width: 885px) {
+	.location-getter div {
+		display: inline-block;
+	}
 }
-
-/*** for very small screens ***/
-
-@media only screen and (max-width: 350px) {
-
-.distance-feedback {
-	padding-top: .3em;
-	height: 3em;
-	width: 300px;
-}
-
-.box, .location-getter, .distance-reset, .header-text, .distance-comment {
-	width: 300px;
-	margin-left: 5px;
-}
-
-.reset {
-visibility: hidden;
-display: none;
-}
-
-}
-
-
-

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>howfarfromho.me</title>
+	<title>howfarfromh.me</title>
 	<meta name="viewport" content="width=device-width" />
 	<link rel="stylesheet" href="styles/normalize.css">
 	<link rel="stylesheet" href="styles/style.css">
@@ -17,24 +17,20 @@
 </head>
 <body>
 	<div class="main-container">
-		<div class="header-text"><h1>howfarfromh.me</h1></div>
-		<div class="distance-comment">How far you have strayed from your abode?</div>	
 		<form class="location-getter" onsubmit="return false;">
-			<div class="form-element"> I live here:
-				<input class="box" type="text" placeholder='enter your home address' name="home-address" autofocus required>
+			<div class="form-element">
+				<input class="box" type="text" placeholder='Where do you live?' name="home-address" autofocus required>
 			</div>
-			<div class="form-element">I'm here right now:
-				<input class="box" type="text" placeholder='i.e. address, intersection, city' name="current-location" autofocus required>
+			<div class="form-element">
+				<input class="box" type="text" placeholder='Where are you right now?' name="current-location" autofocus required>
 			</div>
 			<div class="form-element" id="go-button">
 				<input type="submit" value="Go!">
 			</div>
+			<div class="form-element"><i class="fa fa-refresh reset"></i></div>
 		</form>
-		<div id="map-container"></div>
-		<div class="distance-reset">
-			<div class="distance-feedback">Waiting for input...</div>
-			<div><i class="fa fa-refresh fa-3x reset"></i></div>
-		</div>
 	</div>
+	<div id="map-container"></div>
+	<div class="distance-feedback">Waiting for input...</div>
 </body>
 </html>

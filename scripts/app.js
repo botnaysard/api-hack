@@ -7,7 +7,7 @@ $(document).ready(function(){
   // load the map right away to prevent empty content ont screen
   var mapCanvas = document.getElementById('map-container');
   var mapOptions = {
-    zoom: 1,
+    zoom: 3,
     center: {lat: 30, lng: 34},
     mapTypeID: google.maps.MapTypeId.HYBRID
   }
@@ -69,11 +69,11 @@ $(document).ready(function(){
               function() {
                 // do this on hover
                 $(this).css('cursor','pointer');
-                $(this).animate({'color': '#0F2C42'}, 200);
+                $(this).animate({'color': '#434E56'}, 200);
               }, 
               function() {
                 // do this on hover out
-                $(this).animate({'color': '#639CA7'}, 200);
+                $(this).animate({'color': '#d4d9de'}, 200);
               }
           );
 
@@ -86,7 +86,13 @@ $(document).ready(function(){
             // clear dropped markers & reset bounds
             homeMarker.setMap(null);
             currentMarker.setMap(null);
-            bounds = new google.maps.LatLngBounds(null);     
+            mapOptions = {
+              zoom: 3,
+              center: {lat: 30, lng: 34},
+              mapTypeID: google.maps.MapTypeId.HYBRID
+            }
+            map = new google.maps.Map(mapCanvas, mapOptions);
+            bounds = new google.maps.LatLngBounds();
           });
 
           // output distance statement
