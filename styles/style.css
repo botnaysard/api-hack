@@ -38,7 +38,7 @@ body {
 	padding: 0.1em;
 	margin: 0.5em;
 	color: #171b1e;
-	width: 20em;
+	width: 15em;
 }
 
 .form-element{
@@ -76,9 +76,7 @@ input[type=submit]:hover {
 	text-align: center;
 	vertical-align: middle;
 	padding: 0.75em 0 0.75em 0;
-	border: none;
 	flex-grow: 0;
-	border: 1px solid blue;
 }
 
 .reset {
