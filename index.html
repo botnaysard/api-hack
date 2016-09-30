@@ -16,21 +16,25 @@
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBv6Bdtj5yEiNJIJO-3zyrwiKPQ6EwzdZU&libraries=geometry"></script>
 </head>
 <body>
-	<div class="main-container">
-		<form class="location-getter" onsubmit="return false;">
-			<div class="form-element">
-				<input class="box" type="text" placeholder='Where do you live?' name="home-address" autofocus required>
-			</div>
-			<div class="form-element">
-				<input class="box" type="text" placeholder='Where are you right now?' name="current-location" autofocus required>
-			</div>
-			<div class="form-element" id="go-button">
-				<input type="submit" value="Go!">
-			</div>
-			<div class="form-element"><i class="fa fa-refresh reset"></i></div>
-		</form>
+	<div class="wrapper">
+		<div class="main-container">
+			<form class="location-getter" onsubmit="return false;">
+				<div class="form-element transformer">
+					<input class="box" type="text" placeholder='Where do you live?' name="home-address" autofocus required>
+				</div>
+				<div class="form-element transformer">
+					<input class="box" type="text" placeholder='Where are you right now?' name="current-location" autofocus required>
+				</div>
+				<div class="transformer">
+					<div class="form-element" id="go-button">
+						<input type="submit" value="Go!">
+					</div>
+					<div class="form-element"><i class="fa fa-refresh reset"></i></div>
+				</div>
+			</form>
+		</div>
+		<div id="map-container"></div>
+		<div class="distance-feedback">Waiting for input...</div>
 	</div>
-	<div id="map-container"></div>
-	<div class="distance-feedback">Waiting for input...</div>
 </body>
 </html>
