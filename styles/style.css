@@ -1,5 +1,6 @@
 body {
 	background-color: #f9f9f9;
+	overflow: hidden;
 }
 
 .wrapper {
@@ -89,7 +90,7 @@ input[type=submit]:hover {
 		display: inline-block;
 	}
 
-	.transformer {
+	.transformer, .main-container, .distance-feedback {
 		width: 100%;
 	}
 }
